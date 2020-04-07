@@ -1,0 +1,26 @@
+{
+    "name" : "Unofficial VR Patch",
+    "description" : "Various fixes, tweaks, and improvements for the VR build.",
+    "author" : "Zdann",
+	"contact" : "http://steamcommunity.com/profiles/76561198001478193/",
+    "version" : "1.2",
+	"blt_version" : 2,
+	"hooks" : [
+    {
+        "hook_id" : "lib/tweak_data/tweakdatavr",
+        "script_path" : "hooks/tweakdatavr.lua"
+    },
+    {
+        "hook_id" : "lib/units/weapons/vr/newraycastweaponbasevr",
+        "script_path" : "hooks/newraycastweaponbasevr.lua"
+    },
+    {
+        "hook_id" : "lib/units/beings/player/states/vr/hand/playerhandstatebelt",
+        "script_path" : "hooks/playerhandstatebelt.lua"
+    },
+    {
+        "hook_id" : "lib/units/beings/player/states/vr/playerstandardvr",
+        "script_path" : "hooks/playerstandardvr.lua"
+    }
+    ]
+}

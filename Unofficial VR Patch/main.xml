@@ -1,0 +1,6 @@
+<mod name="Unofficial VR Patch">
+	<AssetUpdates id="27138" version="1.2" provider="modworkshop"/>
+	<AddFiles directory="assets">
+		<effect path="effects/payday2/particles/weapons/shells/shell_slug_vr"/>
+	</table>
+</mod>
