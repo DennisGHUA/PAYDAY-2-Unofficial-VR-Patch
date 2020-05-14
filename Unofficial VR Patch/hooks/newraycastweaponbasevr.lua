@@ -270,8 +270,8 @@ function NewRaycastWeaponBase:spawn_magazine_unit_vr(pos, rot, hide_bullets, sec
 		end
 	end
 	
-	--Show proper amount of bullet objects on held mags
-	if from_belt and mag_data.bullet_objects and (managers.player:player_unit():movement():current_state():_current_reload_amount() ~= nil or self:get_ammo_total() < self:get_ammo_max_per_clip()) then
+	--Show proper amount of bullet objects on mags
+	if mag_data.bullet_objects and (managers.player:player_unit():movement():current_state():_current_reload_amount() ~= nil or self:get_ammo_total() < self:get_ammo_max_per_clip()) then
 		local prefix = mag_data.bullet_objects.prefix
 		local amount = mag_data.bullet_objects.amount
 		local current_count = managers.player:player_unit():movement():current_state():_current_reload_amount() or self:get_ammo_total()

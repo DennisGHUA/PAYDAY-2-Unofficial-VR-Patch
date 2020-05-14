@@ -1,8 +1,6 @@
 Hooks:PostHook(TweakDataVR, "init", "vrtweakfix_init", function(self, tweak_data)
 --Tactical Flashlight
-	self.melee_offsets.weapons.aziz = {
-		rotation = Rotation(0, 90, 0)
-	}
+	self.melee_offsets.weapons.aziz.hit_point = nil
 	
 --Heavy Crossbow
 	self.reload_timelines.arblast.custom_mag_unit = nil
@@ -301,91 +299,51 @@ Hooks:PostHook(TweakDataVR, "init", "vrtweakfix_init", function(self, tweak_data
 		}
 	self.weapon_kick.exclude_list.system = true
 	
---M13 9mm + Akimbo
-	self.reload_timelines.legacy = {
-		start = {
-			{
-				time = 0,
-				sound = "wp_legacy_mag_throw"
-			},
-			{
-				drop_mag = true,
-				time = 0.05,
-				visible = false,
-				pos = Vector3(0, -6, -20)
-			}
-		},
-		finish = {
-			{
-				time = 0,
-				sound = "wp_legacy_mag_in",
-				visible = true,
-				pos = Vector3(0, -6, -20)
-			},
-			{
-				time = 0.1,
-				pos = Vector3(0, -2.5, -7)
-			},
-			{
-				time = 0.56,
-				pos = Vector3(0, -2.5, -7)
-			},
-			{
-				time = 0.6,
-				sound = "wp_legacy_slide_release",
-				pos = Vector3()
-			}
-		}
-	}
-	self.reload_timelines.x_legacy = {
-		start = {
-			{
-				time = 0,
-				sound = "wp_legacy_mag_throw"
-			},
-			{
-				drop_mag = true,
-				time = 0.05,
-				visible = false,
-				pos = Vector3(0, -6, -20)
-			}
-		},
-		finish = {
-			{
-				time = 0,
-				sound = "wp_legacy_mag_in",
-				visible = true,
-				pos = Vector3(0, -6, -20)
-			},
-			{
-				time = 0.1,
-				pos = Vector3(0, -2.5, -7)
-			},
-			{
-				time = 0.56,
-				pos = Vector3(0, -2.5, -7)
-			},
-			{
-				time = 0.6,
-				sound = "wp_legacy_slide_release",
-				pos = Vector3()
-			}
-		}
-	}
+--Akimbo Signature SMG
+	self.reload_timelines.x_shepheard.start[1].sound = "wp_shepheard_clip_grab_throw"
+	self.reload_timelines.x_shepheard.finish[1].sound = "wp_shepheard_clip_slide_in"
+	self.reload_timelines.x_shepheard.finish[4].sound = "wp_shepheard_lever_release"
 	
---Sound override for the Akimbo Signature SMGs
-	self.weapon_sound_overrides.x_shepheard = {
-		sounds = {
-			fire_single = "shepheard_fire_single",
-			fire = "shepheard_fire_single",
-			fire_auto = "shepheard_fire",
-			stop_fire = "shepheard_stop"
-		}
-	}
+--M13 9mm + Akimbo
+	self.reload_timelines.legacy.start[1].sound = "wp_legacy_mag_throw"
+	self.reload_timelines.legacy.finish[1].sound = "wp_legacy_mag_in"
+	self.reload_timelines.legacy.finish[4].sound = "wp_legacy_slide_release"
+	
+	self.reload_timelines.x_legacy.start[1].sound = "wp_legacy_mag_throw"
+	self.reload_timelines.x_legacy.finish[1].sound = "wp_legacy_mag_in"
+	self.reload_timelines.x_legacy.finish[4].sound = "wp_legacy_slide_release"
+	
+--Bernetti Auto + Akimbo
+	self.reload_timelines.beer.start[1].sound = "wp_beer_mag_out"
+	self.reload_timelines.beer.finish[1].sound = "wp_beer_mag_in"
+	self.reload_timelines.beer.finish[4].sound = "wp_beer_slide_forward"
+	
+	self.reload_timelines.x_beer.start[1].sound = "wp_beer_mag_out"
+	self.reload_timelines.x_beer.finish[1].sound = "wp_beer_mag_in"
+	self.reload_timelines.x_beer.finish[4].sound = "wp_beer_slide_forward"
+	
+--Czech 92 + Akimbo
+	self.reload_timelines.czech.start[1].sound = "wp_czech_mag_out"
+	self.reload_timelines.czech.finish[1].sound = "wp_czech_mag_in"
+	self.reload_timelines.czech.finish[4].sound = "wp_czech_slide_forward"
+	
+	self.reload_timelines.x_czech.start[1].sound = "wp_czech_mag_out"
+	self.reload_timelines.x_czech.finish[1].sound = "wp_czech_mag_in"
+	self.reload_timelines.x_czech.finish[4].sound = "wp_czech_slide_forward"
+	
+--Igor Automatik + Akimbo
+	self.reload_timelines.stech.start[1].sound = "wp_stetch_mag_release_button"
+	self.reload_timelines.stech.start[2].sound = "wp_stetch_mag_slide_out"
+	self.reload_timelines.stech.finish[1].sound = "wp_stetch_mag_slide_in"
+	self.reload_timelines.stech.finish[4].sound = "wp_stetch_slide_release"
+	
+	self.reload_timelines.x_stech.start[1].sound = "wp_stetch_mag_release_button"
+	self.reload_timelines.x_stech.start[2].sound = "wp_stetch_mag_slide_out"
+	self.reload_timelines.x_stech.finish[1].sound = "wp_stetch_mag_slide_in"
+	self.reload_timelines.x_stech.finish[4].sound = "wp_stetch_slide_release"
+
 	
 --Unlocking weapons for VR usage
-	self.locked.weapons.contraband = false	--Little Friend, GL not usable
-	self.locked.weapons.frankish = false	--Light Crossbow
-	self.locked.weapons.hunter = false		--Pistol Crossbow
-	self.locked.weapons.arblast = false		--Heavy Crossbow
+	self.locked.weapons = nil
+	
 end)
