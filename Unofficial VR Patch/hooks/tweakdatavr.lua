@@ -299,6 +299,116 @@ Hooks:PostHook(TweakDataVR, "init", "vrtweakfix_init", function(self, tweak_data
 		}
 	self.weapon_kick.exclude_list.system = true
 	
+--M60 Light Machine Gun
+	self.reload_timelines.m60 = {
+		start = {
+			{
+				time = 0,
+				sound = "wp_m60_reload_mag_box_out"
+			},
+			{
+				time = 0.01,
+				pos = Vector3(-3, 0, 0)
+			},
+			{
+				time = 0.03,
+				pos = Vector3(-3, 0, 0)
+			},
+			{
+				drop_mag = true,
+				time = 0.05,
+				visible = false,
+				pos = Vector3(0, 0, -20)
+			}
+		},
+		finish = {
+			{
+				time = 0,
+				sound = "wp_m60_reload_mag_box_in",
+				visible = true,
+				pos = Vector3(0, 0, -20)
+			},
+			{
+				time = 0.1,
+				pos = Vector3(-3, 0, 0)
+			},
+			{
+				time = 0.56,
+				pos = Vector3(-3, 0, 0)
+			},
+			{
+				time = 0.6,
+				sound = "wp_m60_reload_belt_in_feeder",
+				pos = Vector3()
+			}
+		}
+	}
+	
+	self.weapon_assist.weapons.m60 = 
+	{
+		points = {
+			{
+				position = Vector3(0, 30, 2)
+			},
+			{
+				position = Vector3(-14, 5, 0)
+			}
+		}
+	}
+	self.magazine_offsets.m60 = 
+	{
+		position = Vector3(14, 0, 0)
+	}
+	
+--R700 Sniper Rifle
+	self.reload_timelines.r700 = {
+		start = {
+			{
+				time = 0,
+				sound = "wp_r700_reload_empty_mag_out"
+			},
+			{
+				drop_mag = true,
+				time = 0.05,
+				visible = false,
+				pos = Vector3(0, 5, -20),
+				rot = Rotation(0, 30, 0)
+			}
+		},
+		finish = {
+			{
+				time = 0,
+				sound = "wp_r700_reload_empty_mag_in",
+				visible = true,
+				pos = Vector3(0, 0, -20)
+			},
+			{
+				time = 0.1,
+				pos = Vector3(0, 0, -4.5)
+			},
+			{
+				time = 0.56,
+				pos = Vector3(0, 0, -4)
+			},
+			{
+				time = 0.6,
+				sound = "wp_r700_reload_empty_lever_forward",
+				pos = Vector3()
+			}
+		}
+	}
+	self.weapon_assist.weapons.r700 = 
+	{
+		grip = "idle_wpn",
+		position = Vector3(-1, 35, 0)
+	}
+	self.magazine_offsets.r700 = 
+	{
+		position = Vector3(0, 3, 5),
+		rotation = Rotation(88, 100, 28)
+	}
+
+	
 --Akimbo Signature SMG
 	self.reload_timelines.x_shepheard.start[1].sound = "wp_shepheard_clip_grab_throw"
 	self.reload_timelines.x_shepheard.finish[1].sound = "wp_shepheard_clip_slide_in"
@@ -341,6 +451,15 @@ Hooks:PostHook(TweakDataVR, "init", "vrtweakfix_init", function(self, tweak_data
 	self.reload_timelines.x_stech.start[2].sound = "wp_stetch_mag_slide_out"
 	self.reload_timelines.x_stech.finish[1].sound = "wp_stetch_mag_slide_in"
 	self.reload_timelines.x_stech.finish[4].sound = "wp_stetch_slide_release"
+	
+--HOLT 9mm + Akimbo
+	self.reload_timelines.holt.start[1].sound = "wp_holt_mag_throw"
+	self.reload_timelines.holt.finish[1].sound = "wp_holt_mag_in"
+	self.reload_timelines.holt.finish[4].sound = "wp_holt_slide_release"
+	
+	self.reload_timelines.x_holt.start[1].sound = "wp_holt_mag_throw"
+	self.reload_timelines.x_holt.finish[1].sound = "wp_holt_mag_in"
+	self.reload_timelines.x_holt.finish[4].sound = "wp_holt_slide_release"
 
 	
 --Unlocking weapons for VR usage

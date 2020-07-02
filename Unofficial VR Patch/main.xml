@@ -1,5 +1,5 @@
 <mod name="Unofficial VR Patch" global_key="VRFix">
-	<AssetUpdates id="27138" version="1.3" provider="modworkshop"/>
+	<AssetUpdates id="27138" version="1.4" provider="modworkshop"/>
 	
 	<AddFiles directory="assets">
 		<effect path="effects/payday2/particles/weapons/shells/shell_slug_vr"/>
