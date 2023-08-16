@@ -247,7 +247,7 @@ function NewRaycastWeaponBase:spawn_magazine_unit_vr(pos, rot, hide_bullets, sec
 	local use_cc_material_config = is_thq and self:get_cosmetics_data() and true or false
 	local material_config_ids = Idstring("material_config")
 	local mag_unit = World:spawn_unit(part_data.name, pos, rot)
-	local new_material_config_ids = self:_material_config_name(mag_id, mag_data.unit, use_cc_material_config, true)
+	local new_material_config_ids = self:_material_config_name(mag_id, mag_data, use_cc_material_config, true)
 
 	if mag_unit:material_config() ~= new_material_config_ids and DB:has(material_config_ids, new_material_config_ids) then
 		mag_unit:set_material_config(new_material_config_ids, true)
