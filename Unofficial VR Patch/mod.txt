@@ -3,7 +3,7 @@
     "description" : "Various fixes, tweaks, and improvements for the VR build.",
     "author" : "Zdann",
 	"contact" : "http://steamcommunity.com/profiles/76561198001478193/",
-    "version" : "1.4",
+    "version" : "1.5",
 	"blt_version" : 2,
 	"hooks" : [
     {
