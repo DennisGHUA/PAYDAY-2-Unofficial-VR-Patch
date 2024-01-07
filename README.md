@@ -1,7 +1,14 @@
-**Recommended to be used with the updated version of the payday2-vr-improvements / vrplus:**  
-https://github.com/DennisGHUA/payday2-vr-improvements
+**While this mod still works with the latest version of Payday 2 you should uninstall it and use "VR Fixes" instead since that mod introduces more fixes:**  
+Modworkshop page: https://modworkshop.net/mod/45520 \
+GitHub page: https://github.com/LordiAnders/PAYDAY-2-VR-Fixes
 
-This version is a continuation of the following repository:  
+\
+\
+\
+\
+\
+This version (1.5) fixes a crash that occurs when reloading your weapon.\
+This version is based upon the following: \
 Version 1.4 (2020)  
 https://modworkshop.net/mod/27138  
 https://github.com/Lolnoobwut1/PAYDAY-2-Unofficial-VR-Patch
